@@ -1,0 +1,17 @@
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Abp.Swagger.Example.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Abp.Swagger.Example.pdb
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Abp.AutoMapper.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Abp.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Abp.Extended.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\System.Web.Http.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Newtonsoft.Json.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Castle.Core.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Castle.Windsor.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Nito.AsyncEx.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\System.Collections.Immutable.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\System.Net.Http.Formatting.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Nito.AsyncEx.Enlightenment.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Abp.Extended.pdb
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\obj\Debug\Abp.Swagger.Example.csprojResolveAssemblyReference.cache
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\obj\Debug\Abp.Swagger.Example.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\obj\Debug\Abp.Swagger.Example.pdb
