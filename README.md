@@ -6,3 +6,5 @@ https://github.com/yuzukwok/aspnetboilerplate/tree/master/src/Abp.Web.Api.Swagge
 感谢！
 
 需要修改UI的同学，可以自行去了解 https://github.com/domaindrivendev/Swashbuckle
+
+对了 如果是要访问API 帮助文档请输入 http://hostname:port/swagger/
