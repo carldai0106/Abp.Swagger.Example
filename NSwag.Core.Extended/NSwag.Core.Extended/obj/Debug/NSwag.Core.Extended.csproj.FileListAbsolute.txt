@@ -25,3 +25,13 @@ D:\Work\Github\swagger\Abp.Swagger\NSwag.Core.Extended\NSwag.Core.Extended\bin\D
 D:\Work\Github\swagger\Abp.Swagger\NSwag.Core.Extended\NSwag.Core.Extended\obj\Debug\NSwag.Core.Extended.dll
 D:\Work\Github\swagger\Abp.Swagger\NSwag.Core.Extended\NSwag.Core.Extended\obj\Debug\NSwag.Core.Extended.pdb
 D:\Work\Github\swagger\Abp.Swagger\NSwag.Core.Extended\NSwag.Core.Extended\obj\Debug\NSwag.Core.Extended.csprojResolveAssemblyReference.cache
+C:\work\Abp.Swagger\Abp.Swagger.Example\NSwag.Core.Extended\NSwag.Core.Extended\bin\Debug\NSwag.Core.Extended.dll
+C:\work\Abp.Swagger\Abp.Swagger.Example\NSwag.Core.Extended\NSwag.Core.Extended\bin\Debug\NSwag.Core.Extended.pdb
+C:\work\Abp.Swagger\Abp.Swagger.Example\NSwag.Core.Extended\NSwag.Core.Extended\obj\Debug\NSwag.Core.Extended.csprojResolveAssemblyReference.cache
+C:\work\Abp.Swagger\Abp.Swagger.Example\NSwag.Core.Extended\NSwag.Core.Extended\obj\Debug\NSwag.Core.Extended.dll
+C:\work\Abp.Swagger\Abp.Swagger.Example\NSwag.Core.Extended\NSwag.Core.Extended\obj\Debug\NSwag.Core.Extended.pdb
+C:\work\Abp.Swagger\Abp.Swagger.Example\NSwag.Core.Extended\NSwag.Core.Extended\bin\Debug\NJsonSchema.dll
+C:\work\Abp.Swagger\Abp.Swagger.Example\NSwag.Core.Extended\NSwag.Core.Extended\bin\Debug\NSwag.Core.dll
+C:\work\Abp.Swagger\Abp.Swagger.Example\NSwag.Core.Extended\NSwag.Core.Extended\bin\Debug\NSwag.Core.pdb
+C:\work\Abp.Swagger\Abp.Swagger.Example\NSwag.Core.Extended\NSwag.Core.Extended\bin\Debug\NJsonSchema.pdb
+C:\work\Abp.Swagger\Abp.Swagger.Example\NSwag.Core.Extended\NSwag.Core.Extended\bin\Debug\NJsonSchema.xml

@@ -34,6 +34,30 @@
         }
       }
     },
+    "/api/services/app/Customer/GetCustomerById": {
+      "post": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "input",
+            "type": "integer"
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get customer by id.",
+        "operationId": "GetCustomerById",
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/GetCustomerForEditOutput"
+            }
+          }
+        }
+      }
+    },
     "/api/services/app/Customer/GetCustomers": {
       "get": {
         "parameters": [],
@@ -51,6 +75,33 @@
           }
         }
       }
+    },
+    "/api/services/app/Customer/GetCustomerToList": {
+      "post": {
+        "parameters": [
+          {
+            "in": "body",
+            "name": "input",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/GetCustomersInput"
+            }
+          }
+        ],
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get customers by input.",
+        "operationId": "GetCustomerToList",
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/PagedResultOutputCustomerListDto"
+            }
+          }
+        }
+      }
     }
   },
   "swagger": "2.0",
@@ -62,18 +113,6 @@
   "definitions": {
     "NullableIdInput": {
       "typeName": "NullableIdInput",
-      "additionalProperties": false,
-      "type": "object",
-      "allOf": [
-        {
-          "typeName": "NullableIdInputInt32",
-          "type": "object",
-          "$ref": "#/definitions/NullableIdInputInt32"
-        }
-      ]
-    },
-    "NullableIdInputInt32": {
-      "typeName": "NullableIdInputInt32",
       "additionalProperties": false,
       "type": "object",
       "properties": {
@@ -122,6 +161,9 @@
       "typeName": "CustomerListDto",
       "additionalProperties": false,
       "type": "object",
+      "required": [
+        "Id"
+      ],
       "properties": {
         "FirstName": {
           "type": "string"
@@ -143,26 +185,66 @@
         },
         "Email": {
           "type": "string"
+        },
+        "Id": {
+          "type": "integer"
         }
-      },
-      "allOf": [
-        {
-          "typeName": "EntityDtoInt32",
-          "type": "object",
-          "$ref": "#/definitions/EntityDtoInt32"
-        }
-      ]
+      }
     },
-    "EntityDtoInt32": {
-      "typeName": "EntityDtoInt32",
+    "GetCustomersInput": {
+      "typeName": "GetCustomersInput",
       "additionalProperties": false,
       "type": "object",
       "required": [
-        "Id"
+        "MaxResultCount",
+        "SkipCount",
+        "PageIndex"
       ],
       "properties": {
-        "Id": {
+        "Filter": {
+          "type": "string"
+        },
+        "MaxResultCount": {
+          "type": "integer",
+          "maximum": 1000.0,
+          "minimum": 1.0
+        },
+        "SkipCount": {
+          "type": "integer",
+          "maximum": 2147483647.0,
+          "minimum": 0.0
+        },
+        "PageIndex": {
+          "type": "integer",
+          "maximum": 2147483647.0,
+          "minimum": 0.0
+        },
+        "Sorting": {
+          "type": "string"
+        },
+        "FieldName": {
+          "type": "string"
+        }
+      }
+    },
+    "PagedResultOutputCustomerListDto": {
+      "typeName": "PagedResultOutputCustomerListDto",
+      "additionalProperties": false,
+      "type": "object",
+      "required": [
+        "TotalCount"
+      ],
+      "properties": {
+        "TotalCount": {
           "type": "integer"
+        },
+        "Items": {
+          "items": {
+            "typeName": "CustomerListDto",
+            "type": "object",
+            "$ref": "#/definitions/CustomerListDto"
+          },
+          "type": "array"
         }
       }
     }

@@ -36,14 +36,6 @@
       <HintPath>..\..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NJsonSchema, Version=1.11.5799.31777, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\swagger.example\packages\NJsonSchema.1.11.5799.31777\lib\portable-net45+win+wpa81+wp80+MonoAndroid10+MonoTouch10\NJsonSchema.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="NSwag.Core, Version=1.3.5799.33779, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\swagger.example\packages\NSwag.Core.1.3.5799.33779\lib\net45\NSwag.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -67,6 +59,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\NSwag-master\src\NSwag.Core\NSwag.Core.csproj">
+      <Project>{2e6174aa-fc75-4821-9e86-51b30568bec0}</Project>
+      <Name>NSwag.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\NJsonSchema\NJsonSchema.csproj">
+      <Project>{7b7a2e32-e808-4a19-98b1-37e766580f8c}</Project>
+      <Name>NJsonSchema</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

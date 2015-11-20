@@ -40,6 +40,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Linq.Dynamic">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.4\lib\net40\System.Linq.Dynamic.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Swashbuckle.Core\bin\Debug\System.Web.Http.dll</HintPath>
@@ -54,12 +57,17 @@
     <Compile Include="Application\CustomerAppService.cs" />
     <Compile Include="Application\Dto\CustomerListDto.cs" />
     <Compile Include="Application\Dto\GetCustomerForEditOutput.cs" />
+    <Compile Include="Application\Dto\GetCustomersInput.cs" />
+    <Compile Include="Application\Dto\PagedAndSortedInputDto.cs" />
     <Compile Include="Application\ICustomerAppService.cs" />
     <Compile Include="Core\CustomerEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SwaggerApplicationModule.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abp.Extended\Abp.Extended.csproj">
       <Project>{10a545ba-750f-423a-96b5-07c8d831c285}</Project>

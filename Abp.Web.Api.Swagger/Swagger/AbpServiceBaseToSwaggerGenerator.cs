@@ -3,6 +3,8 @@
  *  我的ABP Swagger 代码大部分来自该作者
  *  我只是给予了改进
  */
+
+using Newtonsoft.Json;
 using NJsonSchema;
 using NSwag;
 using System;
@@ -110,10 +112,9 @@ namespace Abp.Swagger
 
             foreach (var schema in schemaResolver.Schemes)
             {
-                //schema.AllOf.Clear();
                 _service.Definitions[schema.TypeName] = schema;
             }
-
+          
             _service.GenerateOperationIds();
 
             if (!hasGenerated)
@@ -121,6 +122,7 @@ namespace Abp.Swagger
 
             return _service;
         }
+
 
         private MethodInfo GetSpecifiedMethod(MethodInfo[] driveMethods, MethodInfo interfaceMethod)
         {

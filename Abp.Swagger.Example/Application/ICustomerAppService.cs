@@ -14,9 +14,17 @@ namespace Abp.Swagger.Application
         [WebApiDescription("Customer", "Get customer by id.")]
         Task<GetCustomerForEditOutput> GetCustomer(NullableIdInput input);
 
+        [HttpPost, OpenWebApi]
+        [WebApiDescription("Customer", "Get customer by id.")]
+        Task<GetCustomerForEditOutput> GetCustomerById(int input);
+
         [HttpGet, OpenWebApi]
         Task<IList<CustomerListDto>> GetCustomers();
 
         Task<IList<CustomerListDto>> GetCustomerList();
+
+        [HttpPost, OpenWebApi]
+        [WebApiDescription("Customer", "Get customers by input.")]
+        Task<PagedResultOutput<CustomerListDto>> GetCustomerToList(GetCustomersInput input);
     }
 }

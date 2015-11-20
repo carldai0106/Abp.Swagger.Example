@@ -1,0 +1,38 @@
+﻿//-----------------------------------------------------------------------
+// <copyright file="JsonFormatStrings.cs" company="NJsonSchema">
+//     Copyright (c) Rico Suter. All rights reserved.
+// </copyright>
+// <license>https://github.com/rsuter/NJsonSchema/blob/master/LICENSE.md</license>
+// <author>Rico Suter, mail@rsuter.com</author>
+//-----------------------------------------------------------------------
+
+namespace NJsonSchema
+{
+    /// <summary>Class containing the constants available as format string. </summary>
+    public static class JsonFormatStrings
+    {
+        /// <summary>Format for a <see cref="DateTime"/>. </summary>
+        public const string DateTime = "date-time";
+
+        /// <summary>Format for an email. </summary>
+        public const string Email = "email";
+
+        /// <summary>Format for an URI. </summary>
+        public const string Uri = "uri";
+
+        /// <summary>Format for an GUID. </summary>
+        public const string Guid = "guid";
+
+        /// <summary>Format for an IP v4 address. </summary>
+        public const string IpV4 = "ipv4";
+
+        /// <summary>Format for binary data encoded with Base64.</summary>
+        public const string Base64 = "base64";
+
+        /// <summary>Format for a byte.</summary>
+        public const string Byte = "byte";
+
+        /// <summary>Format for a hostname (DNS name).</summary>
+        public const string Hostname = "hostname";
+    }
+}

@@ -34,9 +34,6 @@
             <param name="capacity">The capacity. </param>
             <param name="comparer">The comparer. </param>
         </member>
-        <member name="P:NJsonSchema.Collections.ObservableDictionary`2.Dictionary">
-            <summary>Gets the underlying dictonary. </summary>
-        </member>
         <member name="M:NJsonSchema.Collections.ObservableDictionary`2.AddRange(System.Collections.Generic.IDictionary{`0,`1})">
             <summary>Adds multiple key-value pairs the the dictionary. </summary>
             <param name="items">The key-value pairs. </param>
@@ -46,6 +43,9 @@
             <param name="key">The key. </param>
             <param name="value">The value. </param>
             <param name="add">If true and key already exists then an exception is thrown. </param>
+        </member>
+        <member name="P:NJsonSchema.Collections.ObservableDictionary`2.Dictionary">
+            <summary>Gets the underlying dictonary. </summary>
         </member>
         <member name="T:NJsonSchema.EnumHandling">
             <summary>De</summary>
@@ -58,6 +58,7 @@
         </member>
         <member name="T:NJsonSchema.Infrastructure.XmlDocumentationExtensions">
             <summary>Provides extension methods for reading XML comments from reflected members.</summary>
+            <remarks>This class currently works only on the desktop .NET framework.</remarks>
         </member>
         <member name="M:NJsonSchema.Infrastructure.XmlDocumentationExtensions.GetXmlDocumentation(System.Type)">
             <summary>Returns the contents of the "summary" XML documentation tag for the specified member.</summary>
@@ -91,6 +92,9 @@
             <param name="parameter">The reflected parameter or return info.</param>
             <param name="pathToXmlFile">The path to the XML documentation file.</param>
             <returns>The contents of the "returns" or "param" tag.</returns>
+        </member>
+        <member name="M:NJsonSchema.Infrastructure.XmlDocumentationExtensions.GetMemberElementName(System.Object)">
+            <exception cref="T:System.ArgumentException">Unknown member type.</exception>
         </member>
         <member name="T:NJsonSchema.ISchemaResolver">
             <summary>Manager which resolves types to schemas.</summary>
@@ -163,80 +167,33 @@
         <member name="T:NJsonSchema.JsonProperty">
             <summary>A description of a JSON property of a JSON object. </summary>
         </member>
-        <member name="P:NJsonSchema.JsonProperty.Name">
-            <summary>Gets or sets the name of the property. </summary>
-        </member>
-        <member name="P:NJsonSchema.JsonProperty.ParentSchema">
-            <summary>Gets the parent schema of this property schema. </summary>
-        </member>
-        <member name="P:NJsonSchema.JsonProperty.IsRequired">
-            <summary>Gets or sets a value indicating whether the property is required. </summary>
-        </member>
-        <member name="P:NJsonSchema.JsonProperty.InitialIsRequired">
-            <remarks>Value used to set <see cref="P:NJsonSchema.JsonProperty.IsRequired"/> property even if parent is not set yet. </remarks>
-        </member>
-        <member name="T:NJsonSchema.JsonSchemaGeneratorSettings">
-            <summary>The JSON Schema generator settings.</summary>
-        </member>
-        <member name="M:NJsonSchema.JsonSchemaGeneratorSettings.#ctor">
-            <summary>Initializes a new instance of the <see cref="T:NJsonSchema.JsonSchemaGeneratorSettings"/> class.</summary>
-        </member>
-        <member name="P:NJsonSchema.JsonSchemaGeneratorSettings.DefaultEnumHandling">
-            <summary>Gets or sets the default enum handling (default: String).</summary>
-        </member>
-        <member name="T:NJsonSchema.JsonSchemaReferenceUtilities">
-            <summary>Provides utilities to resolve and set JSON schema references.</summary>
-        </member>
-        <member name="M:NJsonSchema.JsonSchemaReferenceUtilities.UpdateSchemaReferences(System.Object)">
-            <summary>Updates all <see cref="P:NJsonSchema.JsonSchema4.SchemaReference"/> properties from the 
-            available <see cref="P:NJsonSchema.JsonSchema4.SchemaReferencePath"/> properties.</summary>
-            <param name="root">The root.</param>
-        </member>
-        <member name="M:NJsonSchema.JsonSchemaReferenceUtilities.UpdateSchemaReferencePaths(System.Object)">
-            <summary>Updates the <see cref="P:NJsonSchema.JsonSchema4.SchemaReferencePath" /> properties
-            from the available <see cref="P:NJsonSchema.JsonSchema4.SchemaReference" /> properties.</summary>
-            <param name="root">The root.</param>
-        </member>
-        <member name="M:NJsonSchema.JsonSchemaReferenceUtilities.ConvertJsonReferences(System.String)">
-            <summary>Converts JSON references ($ref) to property references.</summary>
-            <param name="data">The data.</param>
-            <returns>The data.</returns>
-        </member>
-        <member name="M:NJsonSchema.JsonSchemaReferenceUtilities.ConvertPropertyReferences(System.String)">
-            <summary>Converts property references to JSON references ($ref).</summary>
-            <param name="data">The data.</param>
-            <returns></returns>
-        </member>
         <member name="T:NJsonSchema.JsonSchema4">
             <summary>A base class for describing a JSON schema. </summary>
-        </member>
-        <member name="P:NJsonSchema.JsonSchema4.TypeName">
-            <summary>Gets or sets the type name (class name of the object). </summary>
         </member>
         <member name="M:NJsonSchema.JsonSchema4.#ctor">
             <summary>Initializes a new instance of the <see cref="T:NJsonSchema.JsonSchema4"/> class. </summary>
         </member>
         <member name="M:NJsonSchema.JsonSchema4.FromType``1">
-            <summary>Creates a <see cref="T:NJsonSchema.JsonSchema4" /> from a given type.</summary>
+            <summary>Creates a <see cref="T:NJsonSchema.JsonSchema4"/> from a given type.</summary>
             <typeparam name="TType">The type to create the schema for.</typeparam>
-            <returns>The <see cref="T:NJsonSchema.JsonSchema4" />.</returns>
+            <returns>The <see cref="T:NJsonSchema.JsonSchema4"/>.</returns>
         </member>
         <member name="M:NJsonSchema.JsonSchema4.FromType(System.Type)">
-            <summary>Creates a <see cref="T:NJsonSchema.JsonSchema4" /> from a given type.</summary>
+            <summary>Creates a <see cref="T:NJsonSchema.JsonSchema4"/> from a given type.</summary>
             <param name="type">The type to create the schema for.</param>
-            <returns>The <see cref="T:NJsonSchema.JsonSchema4" />.</returns>
+            <returns>The <see cref="T:NJsonSchema.JsonSchema4"/>.</returns>
         </member>
         <member name="M:NJsonSchema.JsonSchema4.FromType``1(NJsonSchema.JsonSchemaGeneratorSettings)">
-            <summary>Creates a <see cref="T:NJsonSchema.JsonSchema4" /> from a given type.</summary>
+            <summary>Creates a <see cref="T:NJsonSchema.JsonSchema4"/> from a given type.</summary>
             <typeparam name="TType">The type to create the schema for.</typeparam>
             <param name="settings">The settings.</param>
-            <returns>The <see cref="T:NJsonSchema.JsonSchema4" />.</returns>
+            <returns>The <see cref="T:NJsonSchema.JsonSchema4"/>.</returns>
         </member>
         <member name="M:NJsonSchema.JsonSchema4.FromType(System.Type,NJsonSchema.JsonSchemaGeneratorSettings)">
-            <summary>Creates a <see cref="T:NJsonSchema.JsonSchema4" /> from a given type.</summary>
+            <summary>Creates a <see cref="T:NJsonSchema.JsonSchema4"/> from a given type.</summary>
             <param name="type">The type to create the schema for.</param>
             <param name="settings">The settings.</param>
-            <returns>The <see cref="T:NJsonSchema.JsonSchema4" />.</returns>
+            <returns>The <see cref="T:NJsonSchema.JsonSchema4"/>.</returns>
         </member>
         <member name="M:NJsonSchema.JsonSchema4.FromJson(System.String)">
             <summary>Deserializes a JSON string to a <see cref="T:NJsonSchema.JsonSchema4"/>. </summary>
@@ -247,6 +204,22 @@
             <summary>Creates the type reference.</summary>
             <param name="schema">The referenced schema.</param>
             <returns>The type reference.</returns>
+        </member>
+        <member name="M:NJsonSchema.JsonSchema4.ToJson">
+            <summary>Serializes the <see cref="T:NJsonSchema.JsonSchema4"/> to a JSON string. </summary>
+            <returns>The JSON string. </returns>
+        </member>
+        <member name="M:NJsonSchema.JsonSchema4.Validate(Newtonsoft.Json.Linq.JToken)">
+            <summary>Validates the given JSON token against this schema. </summary>
+            <param name="token">The token to validate. </param>
+            <returns>The collection of validation errors. </returns>
+        </member>
+        <member name="M:NJsonSchema.JsonSchema4.FindRootParent">
+            <summary>Finds the root parent of this schema. </summary>
+            <returns>The parent schema or this when this is the root. </returns>
+        </member>
+        <member name="P:NJsonSchema.JsonSchema4.TypeName">
+            <summary>Gets or sets the type name (class name of the object). </summary>
         </member>
         <member name="P:NJsonSchema.JsonSchema4.SchemaVersion">
             <summary>Gets or sets the schema. </summary>
@@ -329,7 +302,7 @@
         </member>
         <member name="P:NJsonSchema.JsonSchema4.RequiredProperties">
             <summary>Gets the collection of required properties. </summary>
-            <remarks>This collection can also be changed through the <see cref="P:NJsonSchema.JsonProperty.IsRequired"/> property. </remarks>>
+            <remarks>This collection can also be changed through the <see cref="P:NJsonSchema.JsonProperty.IsRequired"/> property. </remarks>&gt;
         </member>
         <member name="P:NJsonSchema.JsonSchema4.Properties">
             <summary>Gets the properties of the type. </summary>
@@ -380,18 +353,49 @@
         <member name="P:NJsonSchema.JsonSchema4.IsAnyType">
             <summary>Gets a value indicating whether this is any type (e.g. any in TypeScript or object in CSharp).</summary>
         </member>
-        <member name="M:NJsonSchema.JsonSchema4.ToJson">
-            <summary>Serializes the <see cref="T:NJsonSchema.JsonSchema4"/> to a JSON string. </summary>
-            <returns>The JSON string. </returns>
+        <member name="P:NJsonSchema.JsonProperty.Name">
+            <summary>Gets or sets the name of the property. </summary>
         </member>
-        <member name="M:NJsonSchema.JsonSchema4.Validate(Newtonsoft.Json.Linq.JToken)">
-            <summary>Validates the given JSON token against this schema. </summary>
-            <param name="token">The token to validate. </param>
-            <returns>The collection of validation errors. </returns>
+        <member name="P:NJsonSchema.JsonProperty.ParentSchema">
+            <summary>Gets the parent schema of this property schema. </summary>
         </member>
-        <member name="M:NJsonSchema.JsonSchema4.FindRootParent">
-            <summary>Finds the root parent of this schema. </summary>
-            <returns>The parent schema or this when this is the root. </returns>
+        <member name="P:NJsonSchema.JsonProperty.IsRequired">
+            <summary>Gets or sets a value indicating whether the property is required. </summary>
+        </member>
+        <member name="P:NJsonSchema.JsonProperty.InitialIsRequired">
+            <remarks>Value used to set <see cref="P:NJsonSchema.JsonProperty.IsRequired"/> property even if parent is not set yet. </remarks>
+        </member>
+        <member name="T:NJsonSchema.JsonSchemaGeneratorSettings">
+            <summary>The JSON Schema generator settings.</summary>
+        </member>
+        <member name="M:NJsonSchema.JsonSchemaGeneratorSettings.#ctor">
+            <summary>Initializes a new instance of the <see cref="T:NJsonSchema.JsonSchemaGeneratorSettings"/> class.</summary>
+        </member>
+        <member name="P:NJsonSchema.JsonSchemaGeneratorSettings.DefaultEnumHandling">
+            <summary>Gets or sets the default enum handling (default: String).</summary>
+        </member>
+        <member name="T:NJsonSchema.JsonSchemaReferenceUtilities">
+            <summary>Provides utilities to resolve and set JSON schema references.</summary>
+        </member>
+        <member name="M:NJsonSchema.JsonSchemaReferenceUtilities.UpdateSchemaReferences(System.Object)">
+            <summary>Updates all <see cref="P:NJsonSchema.JsonSchema4.SchemaReference"/> properties from the 
+            available <see cref="P:NJsonSchema.JsonSchema4.SchemaReferencePath"/> properties.</summary>
+            <param name="root">The root.</param>
+        </member>
+        <member name="M:NJsonSchema.JsonSchemaReferenceUtilities.UpdateSchemaReferencePaths(System.Object)">
+            <summary>Updates the <see cref="P:NJsonSchema.JsonSchema4.SchemaReferencePath"/> properties
+            from the available <see cref="P:NJsonSchema.JsonSchema4.SchemaReference"/> properties.</summary>
+            <param name="root">The root.</param>
+        </member>
+        <member name="M:NJsonSchema.JsonSchemaReferenceUtilities.ConvertJsonReferences(System.String)">
+            <summary>Converts JSON references ($ref) to property references.</summary>
+            <param name="data">The data.</param>
+            <returns>The data.</returns>
+        </member>
+        <member name="M:NJsonSchema.JsonSchemaReferenceUtilities.ConvertPropertyReferences(System.String)">
+            <summary>Converts property references to JSON references ($ref).</summary>
+            <param name="data">The data.</param>
+            <returns></returns>
         </member>
         <member name="T:NJsonSchema.JsonSchemaValidator">
             <summary>Class to validate a JSON schema against a given <see cref="T:Newtonsoft.Json.Linq.JToken"/>. </summary>
@@ -414,11 +418,8 @@
             <summary>Initializes a new instance of the <see cref="T:NJsonSchema.JsonSchemaGenerator"/> class.</summary>
             <param name="settings">The settings.</param>
         </member>
-        <member name="P:NJsonSchema.JsonSchemaGenerator.Settings">
-            <summary>Gets the settings.</summary>
-        </member>
         <member name="M:NJsonSchema.JsonSchemaGenerator.Generate(System.Type,NJsonSchema.ISchemaResolver)">
-            <summary>Generates a <see cref="T:NJsonSchema.JsonSchema4" /> object for the given type and adds the mapping to the given resolver.</summary>
+            <summary>Generates a <see cref="T:NJsonSchema.JsonSchema4"/> object for the given type and adds the mapping to the given resolver.</summary>
             <param name="type">The type.</param>
             <param name="schemaResolver">The schema resolver.</param>
             <returns>The schema.</returns>
@@ -426,7 +427,7 @@
             <exception cref="T:System.InvalidOperationException">Could not find item type of enumeration type.</exception>
         </member>
         <member name="M:NJsonSchema.JsonSchemaGenerator.Generate``1(System.Type,NJsonSchema.ISchemaResolver)">
-            <summary>Generates a <see cref="T:NJsonSchema.JsonSchema4" /> object for the given type and adds the mapping to the given resolver.</summary>
+            <summary>Generates a <see cref="T:NJsonSchema.JsonSchema4"/> object for the given type and adds the mapping to the given resolver.</summary>
             <typeparam name="TSchemaType">The type of the schema type.</typeparam>
             <param name="type">The type.</param>
             <param name="schemaResolver">The schema resolver.</param>
@@ -448,6 +449,9 @@
             <summary>Gets the properties of the given type or null to take all properties.</summary>
             <param name="type">The type.</param>
             <returns>The property names or null for all.</returns>
+        </member>
+        <member name="P:NJsonSchema.JsonSchemaGenerator.Settings">
+            <summary>Gets the settings.</summary>
         </member>
         <member name="T:NJsonSchema.JsonObjectType">
             <summary>Enumeration of the possible object types. </summary>
@@ -520,16 +524,6 @@
         <member name="T:NJsonSchema.Validation.ChildSchemaValidationError">
             <summary>A subschema validation error. </summary>
         </member>
-        <member name="M:NJsonSchema.Validation.ChildSchemaValidationError.#ctor(NJsonSchema.Validation.ValidationErrorKind,System.String,System.String,System.Collections.Generic.IReadOnlyDictionary{NJsonSchema.JsonSchema4,System.Collections.Generic.ICollection{NJsonSchema.Validation.ValidationError}})">
-            <summary>Initializes a new instance of the <see cref="T:NJsonSchema.Validation.ValidationError"/> class. </summary>
-            <param name="kind">The error kind. </param>
-            <param name="property">The property name. </param>
-            <param name="path">The property path. </param>
-            <param name="errors">The error list. </param>
-        </member>
-        <member name="P:NJsonSchema.Validation.ChildSchemaValidationError.Errors">
-            <summary>Gets the errors for each validated subschema. </summary>
-        </member>
         <member name="T:NJsonSchema.Validation.ValidationError">
             <summary>A validation error. </summary>
         </member>
@@ -547,6 +541,16 @@
         </member>
         <member name="P:NJsonSchema.Validation.ValidationError.Path">
             <summary>Gets the property path. </summary>
+        </member>
+        <member name="M:NJsonSchema.Validation.ChildSchemaValidationError.#ctor(NJsonSchema.Validation.ValidationErrorKind,System.String,System.String,System.Collections.Generic.IReadOnlyDictionary{NJsonSchema.JsonSchema4,System.Collections.Generic.ICollection{NJsonSchema.Validation.ValidationError}})">
+            <summary>Initializes a new instance of the <see cref="T:NJsonSchema.Validation.ValidationError"/> class. </summary>
+            <param name="kind">The error kind. </param>
+            <param name="property">The property name. </param>
+            <param name="path">The property path. </param>
+            <param name="errors">The error list. </param>
+        </member>
+        <member name="P:NJsonSchema.Validation.ChildSchemaValidationError.Errors">
+            <summary>Gets the errors for each validated subschema. </summary>
         </member>
         <member name="T:NJsonSchema.Validation.ValidationErrorKind">
             <summary>Enumeration of the possible error kinds. </summary>
