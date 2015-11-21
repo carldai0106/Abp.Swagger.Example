@@ -114,7 +114,7 @@ namespace Abp.Swagger
             {
                 _service.Definitions[schema.TypeName] = schema;
             }
-          
+
             _service.GenerateOperationIds();
 
             if (!hasGenerated)
@@ -124,7 +124,7 @@ namespace Abp.Swagger
         }
 
 
-        private MethodInfo GetSpecifiedMethod(MethodInfo[] driveMethods, MethodInfo interfaceMethod)
+        private MethodInfo GetSpecifiedMethod(IEnumerable<MethodInfo> driveMethods, MethodInfo interfaceMethod)
         {
             var matchingMethods = driveMethods.Where(mi =>
                mi.ReturnType == interfaceMethod.ReturnType
@@ -218,7 +218,7 @@ namespace Abp.Swagger
         }
 
 
-        private void LoadParameters(SwaggerOperationExtended operation, List<ParameterInfo> parameters, ISchemaResolver schemaResolver)
+        private void LoadParameters(SwaggerOperationExtended operation, IEnumerable<ParameterInfo> parameters, ISchemaResolver schemaResolver)
         {
             foreach (var parameter in parameters)
             {
@@ -270,13 +270,15 @@ namespace Abp.Swagger
 
         private SwaggerParameterExtended CreateBodyParameter(ParameterInfo parameter, ISchemaResolver schemaResolver)
         {
+            dynamic attr = parameter.GetCustomAttributes().SingleOrDefault(x => x.GetType().Name == "DescriptionAttribute");
+
             var operationParameter = new SwaggerParameterExtended
             {
                 Schema = CreateAndAddSchema<SwaggerParameterExtended>(parameter.ParameterType, schemaResolver),
                 //modify : modify by carl
                 //Name = "request";
                 Name = parameter.Name,
-                
+                Description = attr != null ? attr.Description : "",
                 Kind = SwaggerParameterKindExtended.Body
             };
 
@@ -346,14 +348,19 @@ namespace Abp.Swagger
 
         private SwaggerParameterExtended CreatePrimitiveParameter(ParameterInfo parameter, ISchemaResolver schemaResolver)
         {
-            var parameterGenerator = new RootTypeJsonSchemaGenerator(_service, JsonSchemaGeneratorSettings);
+            var attrs = parameter.GetCustomAttributes();
 
+            var parameterGenerator = new RootTypeJsonSchemaGenerator(_service, JsonSchemaGeneratorSettings);
             var info = JsonObjectTypeDescription.FromType(parameter.ParameterType);
             var isComplexParameter = IsComplexType(info);
             var parameterType = isComplexParameter ? typeof(string) : parameter.ParameterType; // complex types must be treated as string
 
             var segmentParameter = parameterGenerator.Generate<SwaggerParameterExtended>(parameterType, schemaResolver);
             segmentParameter.Name = parameter.Name;
+
+            dynamic attr = attrs.SingleOrDefault(x => x.GetType().Name == "DescriptionAttribute");
+            segmentParameter.Description = attr != null ? attr.Description : "";
+            segmentParameter.IsRequired = attrs.Any(x => x.GetType().Name == "RequiredAttribute");
 
             return segmentParameter;
         }

@@ -48,28 +48,6 @@ namespace Abp.Swagger
             
             return null;
         }
-
-        //private class NSwagServiceLoader : MarshalByRefObject
-        //{
-        //    internal string FromAssemblyType(string assemblyPath, string className)
-        //    {
-        //        var assembly = Assembly.LoadFrom(assemblyPath);
-        //        var type = assembly.GetType(className);
-
-        //        var service = new SwaggerService();
-        //        var schema = JsonSchema4.FromType(type);
-        //        service.Definitions[type.Name] = schema;
-        //        return service.ToJson();
-        //    }
-
-        //    internal string[] GetClasses(string assemblyPath)
-        //    {
-        //        var assembly = Assembly.LoadFrom(assemblyPath);
-        //        return assembly.ExportedTypes
-        //            .Select(t => t.FullName)
-        //            .OrderBy(t => t)
-        //            .ToArray();
-        //    }
-        //}
+       
     }
 }

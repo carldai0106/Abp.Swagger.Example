@@ -7,9 +7,9 @@
 
     var defaultVal = inputBase.val();
 
-    console.log(tagName);
+    console.log(swashbuckleConfig.discoveryPaths);
 
-    if (tagName != "SELECT") {
+    if (tagName != "SELECT" && swashbuckleConfig.discoveryPaths.length > 1) {
        
         var select = $('<select id="input_baseUrl" name="baseUrl"></select>');
 

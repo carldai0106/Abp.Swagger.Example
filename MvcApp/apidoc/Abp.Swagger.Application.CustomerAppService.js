@@ -16,7 +16,8 @@
             "schema": {
               "type": "object",
               "$ref": "#/definitions/NullableIdInput"
-            }
+            },
+            "description": "Plese enter customer id."
           }
         ],
         "tags": [
@@ -39,11 +40,10 @@
         "parameters": [
           {
             "in": "query",
-            "name": "input",            
-            "description": "ID of pet to return", 
-            "required": true, 
-            "type": "integer", 
-            "format": "int32"
+            "name": "input",
+            "required": true,
+            "type": "integer",
+            "description": "Plese enter customer id."
           }
         ],
         "tags": [
@@ -64,7 +64,10 @@
     "/api/services/app/Customer/GetCustomers": {
       "get": {
         "parameters": [],
-        "tags": [],
+        "tags": [
+          "Customer"
+        ],
+        "summary": "Get all customer.",
         "operationId": "GetCustomers",
         "responses": {
           "200": {
@@ -88,7 +91,8 @@
             "schema": {
               "type": "object",
               "$ref": "#/definitions/GetCustomersInput"
-            }
+            },
+            "description": "Get customer input."
           }
         ],
         "tags": [
@@ -135,28 +139,36 @@
       ],
       "properties": {
         "Id": {
-          "type": "integer"
+          "type": "integer",
+          "description": "Customer Id"
         },
         "FirstName": {
-          "type": "string"
+          "type": "string",
+          "description": "First Name"
         },
         "LastName": {
-          "type": "string"
+          "type": "string",
+          "description": "Last Name"
         },
         "Address": {
-          "type": "string"
+          "type": "string",
+          "description": "Address"
         },
         "City": {
-          "type": "string"
+          "type": "string",
+          "description": "City"
         },
         "State": {
-          "type": "string"
+          "type": "string",
+          "description": "State"
         },
         "Telephone": {
-          "type": "string"
+          "type": "string",
+          "description": "Telphone"
         },
         "Email": {
-          "type": "string"
+          "type": "string",
+          "description": "Email"
         }
       }
     },

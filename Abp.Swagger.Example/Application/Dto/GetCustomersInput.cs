@@ -1,4 +1,5 @@
-﻿using Abp.Runtime.Validation;
+﻿using System.ComponentModel;
+using Abp.Runtime.Validation;
 
 namespace Abp.Swagger.Application.Dto
 {
