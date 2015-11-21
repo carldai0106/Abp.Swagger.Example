@@ -39,8 +39,11 @@
         "parameters": [
           {
             "in": "query",
-            "name": "input",
-            "type": "integer"
+            "name": "input",            
+            "description": "ID of pet to return", 
+            "required": true, 
+            "type": "integer", 
+            "format": "int32"
           }
         ],
         "tags": [

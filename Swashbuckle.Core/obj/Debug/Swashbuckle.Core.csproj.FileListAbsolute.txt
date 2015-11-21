@@ -35,6 +35,6 @@ D:\Work\Github\swagger\Abp.Swagger\Swashbuckle.Core\obj\Debug\Swashbuckle.Core.d
 D:\Work\Github\swagger\Abp.Swagger\Swashbuckle.Core\obj\Debug\Swashbuckle.Core.pdb
 C:\work\Abp.Swagger\Abp.Swagger.Example\Swashbuckle.Core\bin\Debug\Swashbuckle.Core.dll
 C:\work\Abp.Swagger\Abp.Swagger.Example\Swashbuckle.Core\bin\Debug\Swashbuckle.Core.pdb
-C:\work\Abp.Swagger\Abp.Swagger.Example\Swashbuckle.Core\obj\Debug\Swashbuckle.Core.csprojResolveAssemblyReference.cache
 C:\work\Abp.Swagger\Abp.Swagger.Example\Swashbuckle.Core\obj\Debug\Swashbuckle.Core.dll
 C:\work\Abp.Swagger\Abp.Swagger.Example\Swashbuckle.Core\obj\Debug\Swashbuckle.Core.pdb
+C:\work\Abp.Swagger\Abp.Swagger.Example\Swashbuckle.Core\obj\Debug\Swashbuckle.Core.csprojResolveAssemblyReference.cache
