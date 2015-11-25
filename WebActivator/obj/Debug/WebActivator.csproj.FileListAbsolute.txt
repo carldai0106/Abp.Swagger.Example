@@ -1,0 +1,6 @@
+D:\Work\Github\swagger\Abp.Swagger\WebActivator\bin\Debug\WebActivatorEx.dll
+D:\Work\Github\swagger\Abp.Swagger\WebActivator\bin\Debug\WebActivatorEx.pdb
+D:\Work\Github\swagger\Abp.Swagger\WebActivator\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Work\Github\swagger\Abp.Swagger\WebActivator\obj\Debug\WebActivator.csprojResolveAssemblyReference.cache
+D:\Work\Github\swagger\Abp.Swagger\WebActivator\obj\Debug\WebActivatorEx.dll
+D:\Work\Github\swagger\Abp.Swagger\WebActivator\obj\Debug\WebActivatorEx.pdb

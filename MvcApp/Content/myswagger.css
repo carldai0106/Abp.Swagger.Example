@@ -18,7 +18,8 @@
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-#input_baseUrl {
+
+select#input_baseUrl{
    height: 34px;
 }
 

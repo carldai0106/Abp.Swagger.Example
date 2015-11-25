@@ -34,3 +34,5 @@ C:\work\Abp.Swagger\Abp.Swagger.Example\Abp.Swagger.Example\obj\Debug\Abp.Swagge
 C:\work\Abp.Swagger\Abp.Swagger.Example\Abp.Swagger.Example\obj\Debug\Abp.Swagger.Example.pdb
 C:\work\Abp.Swagger\Abp.Swagger.Example\Abp.Swagger.Example\bin\Debug\Abp.Swagger.Example.dll.config
 C:\work\Abp.Swagger\Abp.Swagger.Example\Abp.Swagger.Example\bin\Debug\System.Linq.Dynamic.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\Abp.Swagger.Example.dll.config
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.Example\bin\Debug\System.Linq.Dynamic.dll

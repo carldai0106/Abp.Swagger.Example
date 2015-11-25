@@ -1,11 +1,10 @@
 using System;
 using System.IO;
 using System.Linq;
-using System.Web.Compilation;
 using System.Web.Http;
-using WebActivatorEx;
 using MvcApp;
 using Swashbuckle.Application;
+using WebActivatorEx;
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 

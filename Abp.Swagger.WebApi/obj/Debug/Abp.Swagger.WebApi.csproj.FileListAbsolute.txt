@@ -49,3 +49,4 @@ C:\work\Abp.Swagger\Abp.Swagger.Example\Abp.Swagger.WebApi\obj\Debug\Abp.Swagger
 C:\work\Abp.Swagger\Abp.Swagger.Example\Abp.Swagger.WebApi\obj\Debug\Abp.Swagger.WebApi.dll
 C:\work\Abp.Swagger\Abp.Swagger.Example\Abp.Swagger.WebApi\obj\Debug\Abp.Swagger.WebApi.pdb
 C:\work\Abp.Swagger\Abp.Swagger.Example\Abp.Swagger.WebApi\bin\Debug\System.Linq.Dynamic.dll
+D:\Work\Github\swagger\Abp.Swagger\Abp.Swagger.WebApi\bin\Debug\System.Linq.Dynamic.dll

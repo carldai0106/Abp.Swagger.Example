@@ -92,7 +92,6 @@ D:\Work\Github\swagger\Abp.Swagger\Abp.Web.Api.Swagger\bin\Debug\Newtonsoft.Json
 D:\Work\Github\swagger\Abp.Swagger\Abp.Web.Api.Swagger\bin\Debug\NJsonSchema.pdb
 D:\Work\Github\swagger\Abp.Swagger\Abp.Web.Api.Swagger\bin\Debug\NJsonSchema.xml
 D:\Work\Github\swagger\Abp.Swagger\Abp.Web.Api.Swagger\bin\Debug\NSwag.Core.pdb
-D:\Work\Github\swagger\Abp.Swagger\Abp.Web.Api.Swagger\bin\Debug\NSwag.Core.xml
 D:\Work\Github\swagger\Abp.Swagger\Abp.Web.Api.Swagger\bin\Debug\Abp.dll
 D:\Work\Github\swagger\Abp.Swagger\Abp.Web.Api.Swagger\bin\Debug\Abp.Web.Api.dll
 D:\Work\Github\swagger\Abp.Swagger\Abp.Web.Api.Swagger\bin\Debug\Abp.Web.dll

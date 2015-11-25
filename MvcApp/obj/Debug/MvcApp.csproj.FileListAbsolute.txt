@@ -36,7 +36,6 @@ D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\System.Web.Razor.dll
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\System.Web.WebPages.Deployment.dll
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\System.Web.WebPages.dll
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\System.Web.WebPages.Razor.dll
-D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\WebActivatorEx.dll
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\WebGrease.dll
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\Abp.Extended.dll
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\Abp.AutoMapper.dll
@@ -84,7 +83,6 @@ D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\NJsonSchema.pdb
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\NJsonSchema.xml
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\NSwag.Core.Extended.pdb
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\NSwag.Core.pdb
-D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\NSwag.Core.xml
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\zh-Hans\System.Web.Helpers.resources.dll
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\zh-Hans\System.Web.Mvc.resources.dll
 D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\zh-Hans\System.Web.Razor.resources.dll
@@ -220,3 +218,6 @@ C:\work\Abp.Swagger\Abp.Swagger.Example\MvcApp\obj\Debug\MvcApp.csprojResolveAss
 C:\work\Abp.Swagger\Abp.Swagger.Example\MvcApp\obj\Debug\MvcApp.dll
 C:\work\Abp.Swagger\Abp.Swagger.Example\MvcApp\obj\Debug\MvcApp.pdb
 C:\work\Abp.Swagger\Abp.Swagger.Example\MvcApp\bin\System.Linq.Dynamic.dll
+D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\System.Linq.Dynamic.dll
+D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\WebActivatorEx.dll
+D:\Work\Github\swagger\Abp.Swagger\MvcApp\bin\WebActivatorEx.pdb
