@@ -1,10 +1,11 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Http;
 using MvcApp;
 using Swashbuckle.Application;
-using WebActivatorEx;
+
 
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
@@ -15,9 +16,10 @@ namespace MvcApp
         public static void Register()
         {
             var thisAssembly = typeof(SwaggerConfig).Assembly;
-
+            //GlobalConfiguration.Configuration.EnableSwagger("swagger/docs/{apiVersion}", SwaggerDocConfig)
+               //.EnableSwaggerUi(SwaggerUiConfig);
             GlobalConfiguration.Configuration
-                .EnableSwagger("apidoc/{apiVersion}",
+                .EnableSwagger("swagger/docs/{apiVersion}",
                     c =>
                     {
                         // By default, the service root url is inferred from the request used to access the docs.
@@ -37,18 +39,17 @@ namespace MvcApp
                         // hold additional metadata for an API. Version and title are required but you can also provide
                         // additional fields by chaining methods off SingleApiVersion.
                         //
-                        c.SingleApiVersion("v1", "MvcApp");
 
-                        //c.SingleApiVersion("v1", "BLR.Web")
-                        //    .Description("A sample API for testing and prototyping Swashbuckle features")
-                        //    .TermsOfService("Some terms")
-                        //    .Contact(cc => cc
-                        //        .Name("Some contact")
-                        //        .Url("http://tempuri.org/contact")
-                        //        .Email("some.contact@tempuri.org"))
-                        //    .License(lc => lc
-                        //        .Name("Some License")
-                        //        .Url("http://tempuri.org/license"));
+                        c.SingleApiVersion("v1", "BLR.Web")
+                            .Description("A sample API for testing and prototyping Swashbuckle features")
+                            .TermsOfService("Some terms")
+                            .Contact(cc => cc
+                                .Name("Some contact")
+                                .Url("http://tempuri.org/contact")
+                                .Email("some.contact@tempuri.org"))
+                            .License(lc => lc
+                                .Name("Some License")
+                                .Url("http://tempuri.org/license"));
 
                         // If your API has multiple versions, use "MultipleApiVersions" instead of "SingleApiVersion".
                         // In this case, you must provide a lambda that tells Swashbuckle which actions should be
@@ -56,21 +57,21 @@ namespace MvcApp
                         // returns an "Info" builder so you can provide additional metadata per API version.
                         //
 
-                        c.MultipleApiVersions(
-                            (apiDesc, targetApiVersion) => true,
-                            (vc) =>
-                            {
-                                var path = AppDomain.CurrentDomain.BaseDirectory;
+                        //c.MultipleApiVersions(
+                        //    (apiDesc, targetApiVersion) => true,
+                        //    (vc) =>
+                        //    {
+                        //        var path = AppDomain.CurrentDomain.BaseDirectory;
 
-                                path = Directory.GetParent(path) + "\\apidoc";
+                        //        path = Directory.GetParent(path) + "\\apidoc";
 
-                                var files = Directory.GetFiles(path);
-                                foreach (var item in files)
-                                {
-                                    var fileName = Path.GetFileName(item);
-                                    vc.Version(fileName, "GPS Web API V1");
-                                }
-                            });
+                        //        var files = Directory.GetFiles(path);
+                        //        foreach (var item in files)
+                        //        {
+                        //            var fileName = Path.GetFileName(item);
+                        //            vc.Version(fileName, "GPS Web API V1");
+                        //        }
+                        //    });
 
                         // You can use "BasicAuth", "ApiKey" or "OAuth2" options to describe security schemes for the API.
                         // See https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md for more details.
@@ -203,7 +204,7 @@ namespace MvcApp
                     // has loaded. The file must be included in your project as an "Embedded Resource", and then the resource's
                     // "Logical Name" is passed to the method as shown above.
                     //
-                    c.InjectJavaScript(thisAssembly, "MvcApp.Content.myswagger.js");
+                    //c.InjectJavaScript(thisAssembly, "MvcApp.Content.myswagger.js");
 
                     // The swagger-ui renders boolean data types as a dropdown. By default, it provides "true" and "false"
                     // strings as the possible choices. You can use this option to change these to something else,

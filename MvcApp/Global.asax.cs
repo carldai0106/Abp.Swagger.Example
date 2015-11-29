@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Web;
+using Abp.Application.Services;
+using Abp.Dependency;
+using Abp.Reflection;
+using Abp.Swagger.Application;
 using Abp.Web;
 
 namespace MvcApp
@@ -9,10 +14,9 @@ namespace MvcApp
         {
             /* This line provides better startup performance for the application by disabling detailed assembly investigation.
              * If you need deeper assembly investigation, remove it. */
-            //IocManager.Instance.RegisterIfNot<IAssemblyFinder, CurrentDomainAssemblyFinder>();
+            IocManager.Instance.RegisterIfNot<IAssemblyFinder, CurrentDomainAssemblyFinder>();
 
             //IocManager.Instance.IocContainer.AddFacility<LoggingFacility>(f => f.UseLog4Net().WithConfig("log4net.config"));
-
             base.Application_Start(sender, e);
         }
     }

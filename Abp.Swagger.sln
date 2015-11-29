@@ -7,31 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abp.Extended", "Abp.Extende
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abp.Web.Api.Swagger", "Abp.Web.Api.Swagger\Abp.Web.Api.Swagger.csproj", "{870EAF0E-3E5E-4041-B919-CD53BC253C9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSwag.Core.Extended", "NSwag.Core.Extended\NSwag.Core.Extended\NSwag.Core.Extended.csproj", "{EB3C1749-1A08-443D-821D-1E2F4260EC7E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swashbuckle.Core", "Swashbuckle.Core\Swashbuckle.Core.csproj", "{D50A26FF-02C6-4C16-BA94-4CD7D43EFBB3}"
-EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "swagger-ui(3)", "http://localhost:30756", "{F3D05B96-75C4-4B04-9ACA-546D30570D8C}"
-	ProjectSection(WebsiteProperties) = preProject
-		UseIISExpress = "true"
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_30756"
-		Debug.AspNetCompiler.PhysicalPath = "swagger-ui\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_30756\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_30756"
-		Release.AspNetCompiler.PhysicalPath = "swagger-ui\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_30756\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		SlnRelativePath = "swagger-ui\"
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Abp.Swagger.Example", "Abp.Swagger.Example\Abp.Swagger.Example.csproj", "{EE836A12-113F-4DC2-A353-81A008DFAE96}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApp", "MvcApp\MvcApp.csproj", "{3B1FE33F-7022-4D12-9239-4076A0DB0839}"
@@ -41,8 +16,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NJsonSchema", "NJsonSchema\NJsonSchema.csproj", "{7B7A2E32-E808-4A19-98B1-37E766580F8C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NSwag.Core", "NSwag\NSwag.Core.csproj", "{2E6174AA-FC75-4821-9E86-51B30568BEC0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebActivator", "WebActivator\WebActivator.csproj", "{339C42C9-C961-4E37-B64E-16F1EF03E4D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,18 +31,6 @@ Global
 		{870EAF0E-3E5E-4041-B919-CD53BC253C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{870EAF0E-3E5E-4041-B919-CD53BC253C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{870EAF0E-3E5E-4041-B919-CD53BC253C9C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB3C1749-1A08-443D-821D-1E2F4260EC7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB3C1749-1A08-443D-821D-1E2F4260EC7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB3C1749-1A08-443D-821D-1E2F4260EC7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB3C1749-1A08-443D-821D-1E2F4260EC7E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D50A26FF-02C6-4C16-BA94-4CD7D43EFBB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D50A26FF-02C6-4C16-BA94-4CD7D43EFBB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D50A26FF-02C6-4C16-BA94-4CD7D43EFBB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D50A26FF-02C6-4C16-BA94-4CD7D43EFBB3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F3D05B96-75C4-4B04-9ACA-546D30570D8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3D05B96-75C4-4B04-9ACA-546D30570D8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F3D05B96-75C4-4B04-9ACA-546D30570D8C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
-		{F3D05B96-75C4-4B04-9ACA-546D30570D8C}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{EE836A12-113F-4DC2-A353-81A008DFAE96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE836A12-113F-4DC2-A353-81A008DFAE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE836A12-113F-4DC2-A353-81A008DFAE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -90,10 +51,6 @@ Global
 		{2E6174AA-FC75-4821-9E86-51B30568BEC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E6174AA-FC75-4821-9E86-51B30568BEC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E6174AA-FC75-4821-9E86-51B30568BEC0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{339C42C9-C961-4E37-B64E-16F1EF03E4D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{339C42C9-C961-4E37-B64E-16F1EF03E4D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{339C42C9-C961-4E37-B64E-16F1EF03E4D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{339C42C9-C961-4E37-B64E-16F1EF03E4D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

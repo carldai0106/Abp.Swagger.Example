@@ -1,0 +1,173 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Text;
+using System.Web.Http;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+
+namespace MvcApp.Controllers
+{
+    public class CreateUserResponse
+    {
+        public enum CreateUserStatus
+        {
+            Success = 0,
+            InvalidUserName = 1,
+            InvalidPassword = 2,
+            InvalidQuestion = 3,
+            InvalidAnswer = 4,
+            InvalidEmail = 5,
+            DuplicateUserName = 6,
+            DuplicateEmail = 7,
+            UserRejected = 8,
+            InvalidProviderUserKey = 9,
+            DuplicateProviderUserKey = 10,
+            ProviderError = 11
+        }
+        public CreateUserStatus status { get; set; }
+        public int Id { get; set; }
+    }
+
+    public class MyClass
+    {
+        public string Foo { get; set; }
+    }
+
+    [RoutePrefix("api/Person")]
+    public class PersonsController : ApiController
+    {
+        [HttpPut]
+        [Route("xyz/{data}")]
+        public string Xyz(MyClass data)
+        {
+            return "abc";
+        }
+
+        // GET: api/Person
+        public IEnumerable<Person> Get()
+        {
+            return new Person[]
+            {
+                new Person { FirstName = "Foo", LastName = "Bar"},
+                new Person { FirstName = "Rico", LastName = "Suter"},
+            };
+        }
+
+       
+        public HttpResponseMessage Get(int id)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, new Person { FirstName = "Rico", LastName = "Suter" });
+        }
+
+        // POST: api/Person
+        /// <summary>Creates a new person.</summary>
+        /// <param name="value">The person.</param>
+        public void Post([FromBody]CC value)
+        {
+        }
+
+        // PUT: api/Person/5
+        /// <summary>Updates the existing person.</summary>
+        /// <param name="id">The ID.</param>
+        /// <param name="value">The person.</param>
+        public void Put(int id, [FromBody]Person value)
+        {
+        }
+
+        // DELETE: api/Person/5
+        public void Delete(int id)
+        {
+        }
+
+        [HttpGet]
+        [Route("Calculate/{a}/{b}")]
+        [Description("Calculates the sum of a, b and c.")]
+        public int Calculate(int a, int b, int c)
+        {
+            return a + b + c;
+        }
+
+        [HttpGet]
+        public DateTime AddHour(DateTime time)
+        {
+            return time.Add(TimeSpan.FromHours(1));
+        }
+
+        [HttpGet]
+        public Car LoadComplexObject()
+        {
+            return new Car();
+        }
+
+        //[HttpGet]
+        //public HttpResponseMessage Swagger()
+        //{
+        //    var generator = new WebApiToSwaggerGenerator(new WebApiAssemblyToSwaggerGeneratorSettings
+        //    {
+        //        DefaultUrlTemplate = Configuration.Routes.First(r => !string.IsNullOrEmpty(r.RouteTemplate)).RouteTemplate
+        //    });
+        //    var service = generator.GenerateForController(GetType(), "Swagger");
+        //    return new HttpResponseMessage { Content = new StringContent(service.ToJson(), Encoding.UTF8) };
+        //}
+    }
+
+    public class Car
+    {
+        public string Name { get; set; }
+
+        public Person Driver { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ObjectType Type { get; set; }
+    }
+
+    public enum ObjectType
+    {
+        Foo,
+        Bar
+    }
+
+    /// <summary>The DTO class for a person.</summary>
+    public class Person
+    {
+        /// <summary>Gets or sets the first name.</summary>
+        [JsonProperty("firstName")]
+        public string FirstName { get; set; }
+
+        public string LastName { get; set; }
+
+        public Car[] Cars { get; set; }
+
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ObjectType Type { get; set; }
+    }
+
+    public class PersonNotFoundException : Exception
+    {
+        public PersonNotFoundException()
+        {
+        }
+
+        public int PersonId { get; set; }
+    }
+
+    public class AA
+    {
+        public string FirstName { get; set; }
+    }
+
+    public class BB : AA
+    {
+        public string LastName { get; set; }
+    }
+
+    public class CC : BB
+    {
+        public string Address { get; set; }
+    }
+}

@@ -45,6 +45,10 @@
     <Reference Include="Abp.Web">
       <HintPath>..\dll\Abp.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Abp.Web.Api, Version=0.7.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Abp.Web.Api.dll</HintPath>
+    </Reference>
     <Reference Include="Abp.Web.Mvc">
       <HintPath>..\dll\Abp.Web.Mvc.dll</HintPath>
     </Reference>
@@ -185,10 +189,12 @@
     <Compile Include="App_Start\MvcWebAppModule.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnnotatedTypesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PersonsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -279,14 +285,6 @@
     <ProjectReference Include="..\Abp.Web.Api.Swagger\Abp.Web.Api.Swagger.csproj">
       <Project>{870EAF0E-3E5E-4041-B919-CD53BC253C9C}</Project>
       <Name>Abp.Web.Api.Swagger</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Swashbuckle.Core\Swashbuckle.Core.csproj">
-      <Project>{d50a26ff-02c6-4c16-ba94-4cd7d43efbb3}</Project>
-      <Name>Swashbuckle.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WebActivator\WebActivator.csproj">
-      <Project>{339c42c9-c961-4e37-b64e-16f1ef03e4d9}</Project>
-      <Name>WebActivator</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
