@@ -22,11 +22,3 @@ D:\Work\Github\swagger\Abp.Swagger\NSwag\bin\Debug\NJsonSchema.xml
 D:\Work\Github\swagger\Abp.Swagger\NSwag\obj\Debug\NSwag.Core.csprojResolveAssemblyReference.cache
 D:\Work\Github\swagger\Abp.Swagger\NSwag\obj\Debug\NSwag.Core.dll
 D:\Work\Github\swagger\Abp.Swagger\NSwag\obj\Debug\NSwag.Core.pdb
-C:\work\Abp.Swagger\NSwag\bin\Debug\NSwag.Core.dll
-C:\work\Abp.Swagger\NSwag\bin\Debug\NSwag.Core.pdb
-C:\work\Abp.Swagger\NSwag\bin\Debug\NJsonSchema.dll
-C:\work\Abp.Swagger\NSwag\bin\Debug\NJsonSchema.pdb
-C:\work\Abp.Swagger\NSwag\bin\Debug\NJsonSchema.xml
-C:\work\Abp.Swagger\NSwag\obj\Debug\NSwag.Core.csprojResolveAssemblyReference.cache
-C:\work\Abp.Swagger\NSwag\obj\Debug\NSwag.Core.dll
-C:\work\Abp.Swagger\NSwag\obj\Debug\NSwag.Core.pdb

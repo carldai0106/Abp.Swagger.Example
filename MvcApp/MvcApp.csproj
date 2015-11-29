@@ -45,10 +45,6 @@
     <Reference Include="Abp.Web">
       <HintPath>..\dll\Abp.Web.dll</HintPath>
     </Reference>
-    <Reference Include="Abp.Web.Api, Version=0.7.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Abp.Web.Api.dll</HintPath>
-    </Reference>
     <Reference Include="Abp.Web.Mvc">
       <HintPath>..\dll\Abp.Web.Mvc.dll</HintPath>
     </Reference>

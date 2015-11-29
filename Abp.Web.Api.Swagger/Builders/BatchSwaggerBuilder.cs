@@ -95,7 +95,10 @@ namespace Abp.Builders
                 return null;
             }
 
-            var generator = new AbpServiceBaseToSwaggerGenerator(urlTemplate, new JsonSchemaGeneratorSettings());
+            var generator = new AbpServiceBaseToSwaggerGenerator(urlTemplate, new JsonSchemaGeneratorSettings
+            {
+                FlattenInheritanceHierarchy = true
+            });
             return generator.GenerateForAbpAppService(type, interfaceType);
         }
 

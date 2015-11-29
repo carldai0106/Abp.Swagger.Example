@@ -14,11 +14,3 @@ D:\Work\Github\swagger\Abp.Swagger\NJsonSchema\bin\Debug\Newtonsoft.Json.xml
 D:\Work\Github\swagger\Abp.Swagger\NJsonSchema\obj\Debug\NJsonSchema.dll
 D:\Work\Github\swagger\Abp.Swagger\NJsonSchema\obj\Debug\NJsonSchema.pdb
 D:\Work\Github\swagger\Abp.Swagger\NJsonSchema\obj\Debug\NJsonSchema.csprojResolveAssemblyReference.cache
-C:\work\Abp.Swagger\NJsonSchema\bin\Debug\NJsonSchema.xml
-C:\work\Abp.Swagger\NJsonSchema\bin\Debug\NJsonSchema.dll
-C:\work\Abp.Swagger\NJsonSchema\bin\Debug\NJsonSchema.pdb
-C:\work\Abp.Swagger\NJsonSchema\bin\Debug\Newtonsoft.Json.dll
-C:\work\Abp.Swagger\NJsonSchema\bin\Debug\Newtonsoft.Json.xml
-C:\work\Abp.Swagger\NJsonSchema\obj\Debug\NJsonSchema.dll
-C:\work\Abp.Swagger\NJsonSchema\obj\Debug\NJsonSchema.pdb
-C:\work\Abp.Swagger\NJsonSchema\obj\Debug\NJsonSchema.csprojResolveAssemblyReference.cache
