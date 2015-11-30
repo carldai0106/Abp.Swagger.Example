@@ -1,8 +1,4 @@
-﻿.swagger-section #header {
-  background-color: #89bf04;
-  padding: 14px 14px 24px 14px !important;
-}
-
+﻿
 #input_baseUrl,#input_apiKey {
     display: block;
     padding: 6px 12px !important;

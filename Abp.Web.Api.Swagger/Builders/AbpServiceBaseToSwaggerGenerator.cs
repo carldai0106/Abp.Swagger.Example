@@ -56,10 +56,12 @@ namespace Abp.Builders
             dynamic webApiDesc = interfaceType.GetCustomAttributes()
                 .FirstOrDefault(x => x.GetType().Name == "WebApiDescriptionAttribute");
 
+            dynamic description = null;
+            dynamic name = null;
             if (webApiDesc != null)
             {
-                dynamic name = webApiDesc.Name;
-                dynamic description = webApiDesc.Description;
+                name = webApiDesc.Name;
+                description = webApiDesc.Description;
 
                 _service.Tags.Add(new SwaggerTagInfo
                 {
@@ -67,6 +69,12 @@ namespace Abp.Builders
                     Description = description
                 });
             }
+
+             _service.Info = new SwaggerInfo
+            {
+                Title = name,
+                Version = description
+            };
 
             var hasGenerated = false;
             foreach (var method in methods.Where(m => m.Name != excludedMethodName))

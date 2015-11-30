@@ -113,8 +113,8 @@
   },
   "swagger": "2.0",
   "info": {
-    "title": "",
-    "version": ""
+    "title": "Customer",
+    "version": "WebApi for Customer."
   },
   "schemes": [],
   "definitions": {
