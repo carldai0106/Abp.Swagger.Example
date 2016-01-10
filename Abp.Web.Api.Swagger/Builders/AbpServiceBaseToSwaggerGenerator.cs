@@ -7,11 +7,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Text.RegularExpressions;
 using NJsonSchema;
 using NJsonSchema.Infrastructure;
 using NSwag;
 using Abp.NSwagExtended;
+using Newtonsoft.Json;
 
 
 namespace Abp.Builders
@@ -37,13 +39,14 @@ namespace Abp.Builders
         public JsonSchemaGeneratorSettings JsonSchemaGeneratorSettings { get; set; }
 
         /// <summary>
-        /// 生成文档结构
+        /// Generate SwaggerService for Abp WebApi
         /// </summary>
-        /// <param name="type">具体的 AppService 类型</param>
-        /// <param name="interfaceType">具体的 IAppService 类型</param>
-        /// <param name="excludedMethodName">排除的方法名称</param>
+        /// <param name="type">the type of Abp Application Service</param>
+        /// <param name="interfaceType">Abp's IApplicationService</param>
+        /// <param name="checkOpenWebApi">if true, need add OpenWebApiAttribute to the method of the interface</param>
+        /// <param name="excludedMethodName">excluded method name</param>
         /// <returns></returns>
-        public SwaggerServiceExtended GenerateForAbpAppService(Type type, Type interfaceType,
+        public SwaggerServiceExtended GenerateForAbpAppService(Type type, Type interfaceType, bool checkOpenWebApi = false,
             string excludedMethodName = "Swagger")
         {
             _service = new SwaggerServiceExtended();
@@ -81,7 +84,7 @@ namespace Abp.Builders
             {
                 //根据特性判断是否是公共的WebAPI方法
                 var canOpen = method.GetCustomAttributes().Any(x => x.GetType().Name == "OpenWebApiAttribute");
-                if (!canOpen)
+                if (!canOpen && checkOpenWebApi)
                     continue;
 
                 var driveMethod = GetSpecifiedMethod(deriveMethods, method);
@@ -326,7 +329,7 @@ namespace Abp.Builders
                     };
                 }
 
-                if (!schemaResolver.HasSchema(type))
+                if (!schemaResolver.HasSchema(type, false))
                 {
                     var schemaGenerator = new RootTypeJsonSchemaGenerator(_service, JsonSchemaGeneratorSettings);
                     schemaGenerator.Generate<JsonSchema4>(type, schemaResolver);
@@ -335,7 +338,7 @@ namespace Abp.Builders
                 return new TSchemaType
                 {
                     Type = JsonObjectType.Object,
-                    SchemaReference = schemaResolver.GetSchema(type)
+                    SchemaReference = schemaResolver.GetSchema(type, false)
                 };
             }
 

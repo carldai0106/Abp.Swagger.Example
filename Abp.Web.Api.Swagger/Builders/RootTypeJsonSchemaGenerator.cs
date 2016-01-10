@@ -39,13 +39,13 @@ namespace Abp.Builders
             }
             else
             {
-                if (!schemaResolver.HasSchema(type))
+                if (!schemaResolver.HasSchema(type, false))
                 {
                     var schemaGenerator = new RootTypeJsonSchemaGenerator(_service, Settings);
                     schemaGenerator.Generate<JsonSchema4>(type, schemaResolver);
                 }
 
-                schema.SchemaReference = schemaResolver.GetSchema(type);
+                schema.SchemaReference = schemaResolver.GetSchema(type, false);
             }
         }
     }

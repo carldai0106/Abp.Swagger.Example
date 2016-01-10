@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Abp.Builders;
 using Newtonsoft.Json;
 using NJsonSchema;
 using NSwag;
@@ -40,7 +41,7 @@ namespace Abp.NSwagExtended
 
         /// <summary>Converts the description object to JSON.</summary>
         /// <returns>The JSON string.</returns>
-        public string ToJson(JsonConverter converter = null)
+        public new string ToJson()
         {
             var settings = new JsonSerializerSettings
             {
@@ -48,10 +49,11 @@ namespace Abp.NSwagExtended
                 Formatting = Formatting.Indented
             };
 
-            if (converter != null)
-            {
-                settings.Converters.Add(converter);
-            }
+            var swaggerOperationsConverter = new SwaggerOperationsExtendedConverter(typeof(SwaggerOperationsExtended));
+            var jsonSchema4Converter = new JsonSchema4Converter(typeof (JsonSchema4));
+
+            settings.Converters.Add(swaggerOperationsConverter);
+            settings.Converters.Add(jsonSchema4Converter);
 
             GenerateOperationIds();
 

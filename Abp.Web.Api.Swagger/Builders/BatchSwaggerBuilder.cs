@@ -2,7 +2,6 @@
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using System.Web;
 using Abp.NSwagExtended;
 using NJsonSchema;
@@ -44,9 +43,8 @@ namespace Abp.Builders
 
                 if (service == null)
                     continue;
-
-                var converter = new SwaggerOperationsExtendedConverter(typeof(SwaggerOperationsExtended));
-                var json = service.ToJson(converter);
+                
+                var json = service.ToJson();
 
                 var arrs = item.Split('.').ToList();
 

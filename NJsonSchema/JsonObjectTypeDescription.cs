@@ -8,6 +8,7 @@
 
 using System;
 using System.Collections;
+using System.Linq;
 using System.Reflection;
 
 namespace NJsonSchema
@@ -21,7 +22,7 @@ namespace NJsonSchema
         public static JsonObjectTypeDescription FromType(Type type)
         {
             if (type.GetTypeInfo().IsEnum)
-                return new JsonObjectTypeDescription(JsonObjectType.Integer, true);
+                return new JsonObjectTypeDescription(JsonObjectType.Integer, true); // TODO: This may be wrong (may be string or integer)!
 
             if ((type == typeof(int) || type == typeof(long) || type == typeof(short)) ||
                 (type == typeof(uint) || type == typeof(ulong) || type == typeof(ushort)))
@@ -42,8 +43,11 @@ namespace NJsonSchema
             if (type == typeof(Guid))
                 return new JsonObjectTypeDescription(JsonObjectType.String, true, false, JsonFormatStrings.Guid);
 
-            if (type == typeof(DateTime))
+            if (type == typeof(DateTime) || type == typeof(DateTimeOffset))
                 return new JsonObjectTypeDescription(JsonObjectType.String, true, false, JsonFormatStrings.DateTime);
+
+            if (type == typeof(TimeSpan))
+                return new JsonObjectTypeDescription(JsonObjectType.String, true, false, JsonFormatStrings.TimeSpan);
 
             if (type == typeof(Uri))
                 return new JsonObjectTypeDescription(JsonObjectType.String, true, false, JsonFormatStrings.Uri);
@@ -52,7 +56,7 @@ namespace NJsonSchema
                 return new JsonObjectTypeDescription(JsonObjectType.Integer, true, false, JsonFormatStrings.Byte);
 
             if (type == typeof(byte[]))
-                return new JsonObjectTypeDescription(JsonObjectType.String, true, false, JsonFormatStrings.Base64);
+                return new JsonObjectTypeDescription(JsonObjectType.String, false, false, JsonFormatStrings.Base64);
 
             if (IsDictionaryType(type))
                 return new JsonObjectTypeDescription(JsonObjectType.Object, false, true);
@@ -63,7 +67,7 @@ namespace NJsonSchema
             if (type.Name == "Nullable`1")
             {
                 var typeDescription = FromType(type.GenericTypeArguments[0]);
-                typeDescription.IsAlwaysRequired = false; 
+                typeDescription.IsAlwaysRequired = false;
                 return typeDescription;
             }
 
@@ -75,7 +79,7 @@ namespace NJsonSchema
             Type = type;
             IsAlwaysRequired = isAlwaysRequired;
             Format = format;
-            IsDictionary = isDictionary; 
+            IsDictionary = isDictionary;
         }
 
         /// <summary>Gets the type. </summary>
@@ -92,12 +96,19 @@ namespace NJsonSchema
 
         private static bool IsArrayType(Type type)
         {
-            return typeof(IEnumerable).GetTypeInfo().IsAssignableFrom(type.GetTypeInfo());
+            if (IsDictionaryType(type))
+                return false;
+            
+            return type.IsArray || (type.GetTypeInfo().ImplementedInterfaces.Contains(typeof(IEnumerable)) && 
+                (type.GetTypeInfo().BaseType == null || 
+                !type.GetTypeInfo().BaseType.GetTypeInfo().ImplementedInterfaces.Contains(typeof(IEnumerable))));
         }
 
         private static bool IsDictionaryType(Type type)
         {
-            return typeof(IDictionary).GetTypeInfo().IsAssignableFrom(type.GetTypeInfo());
+            return type.GetTypeInfo().ImplementedInterfaces.Contains(typeof(IDictionary)) &&
+                (type.GetTypeInfo().BaseType == null ||
+                !type.GetTypeInfo().BaseType.GetTypeInfo().ImplementedInterfaces.Contains(typeof(IDictionary)));
         }
     }
 }

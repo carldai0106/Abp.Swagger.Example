@@ -82,6 +82,24 @@
         }
       }
     },
+    "/api/services/app/Customer/GetCustomerList": {
+      "post": {
+        "parameters": [],
+        "tags": [],
+        "operationId": "GetCustomerList",
+        "responses": {
+          "200": {
+            "schema": {
+              "items": {
+                "type": "object",
+                "$ref": "#/definitions/CustomerListDto"
+              },
+              "type": "array"
+            }
+          }
+        }
+      }
+    },
     "/api/services/app/Customer/GetCustomerToList": {
       "post": {
         "parameters": [
@@ -119,7 +137,6 @@
   "schemes": [],
   "definitions": {
     "NullableIdInput": {
-      "typeName": "NullableIdInput",
       "additionalProperties": false,
       "type": "object",
       "properties": {
@@ -129,7 +146,6 @@
       }
     },
     "GetCustomerForEditOutput": {
-      "typeName": "GetCustomerForEditOutput",
       "additionalProperties": false,
       "type": "object",
       "required": [
@@ -173,7 +189,6 @@
       }
     },
     "CustomerListDto": {
-      "typeName": "CustomerListDto",
       "additionalProperties": false,
       "type": "object",
       "required": [
@@ -207,7 +222,6 @@
       }
     },
     "GetCustomersInput": {
-      "typeName": "GetCustomersInput",
       "additionalProperties": false,
       "type": "object",
       "required": [
@@ -243,7 +257,6 @@
       }
     },
     "PagedResultOutputCustomerListDto": {
-      "typeName": "PagedResultOutputCustomerListDto",
       "additionalProperties": false,
       "type": "object",
       "required": [

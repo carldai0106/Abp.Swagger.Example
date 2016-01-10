@@ -1,35 +1,37 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using NJsonSchema;
 
-namespace Abp.NSwagExtended
+namespace Abp.Builders
 {
-    public class SwaggerOperationsExtendedConverter : JsonConverter
+    internal class JsonSchema4Converter : JsonConverter
     {
         private readonly Type[] _types;
-        public SwaggerOperationsExtendedConverter(params Type[] types)
+        public JsonSchema4Converter(params Type[] types)
         {
             _types = types;
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var pair = (SwaggerOperationsExtended)value;
-
-            writer.WriteStartObject();
-            var count = pair.Keys.Count;
-            for (var i = 0; i < count; i++)
+            var token = JToken.FromObject(value);
+            if (token.Type != JTokenType.Object)
             {
-                var key = pair.Keys.ElementAt(i);
-                var oVal = pair.Values.ElementAt(i);
-                
-                writer.WritePropertyName(key.ToString().ToLower());
-
-                var tokenReader = new JTokenReader(JToken.FromObject(oVal));
-                writer.WriteToken(tokenReader);
+                token.WriteTo(writer);
             }
-            writer.WriteEndObject();
+            else
+            {
+                var obj = (JObject)token;
+                var firstOrDefault = obj.Properties().FirstOrDefault(x => x.Name == "typeName");
+                firstOrDefault?.Remove();
+
+                obj.WriteTo(writer);
+            }
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)

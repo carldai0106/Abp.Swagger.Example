@@ -87,7 +87,7 @@ namespace NSwag
         public ObservableDictionary<string, SwaggerOperations> Paths { get; private set; }
 
         /// <summary>Gets or sets the types.</summary>
-        [JsonProperty(PropertyName = "definitions", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
+        [JsonProperty(PropertyName = "definitions", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public ObservableDictionary<string, JsonSchema4> Definitions { get; private set; }
 
         /// <summary>Gets or sets the parameters which can be used for all operations.</summary>
@@ -104,11 +104,11 @@ namespace NSwag
 
         /// <summary>Gets or sets a security description.</summary>
         [JsonProperty(PropertyName = "security", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public SwaggerSecurityRequirement Security { get; set; }
+        public List<SwaggerSecurityRequirement> Security { get; set; }
 
         /// <summary>Gets or sets the description.</summary>
         [JsonProperty(PropertyName = "tags", DefaultValueHandling = DefaultValueHandling.Ignore)]
-        public List<string> Tags { get; set; }
+        public List<SwaggerTag> Tags { get; set; }
 
         /// <summary>Gets the base URL of the web service.</summary>
         [JsonIgnore]
@@ -203,7 +203,7 @@ namespace NSwag
                 if (group.Count() > 1)
                 {
                     var arrayResponseOperation = operations.FirstOrDefault(
-                        a => a.Operation.Responses.Any(r => r.Key == "200" && r.Value.Schema != null && r.Value.Schema.Type == JsonObjectType.Array));
+                        a => a.Operation.Responses.Any(r => HttpUtilities.IsSuccessStatusCode(r.Key) && r.Value.Schema != null && r.Value.Schema.Type == JsonObjectType.Array));
 
                     if (arrayResponseOperation != null)
                     {
