@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Abp.NSwagExtended;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using NJsonSchema;
 
 namespace Abp.Builders
 {
+    /// <summary>
+    /// Use it to remove some field from json and make swagger json valid.
+    /// </summary>
     internal class JsonSchema4Converter : JsonConverter
     {
         private readonly Type[] _types;
@@ -26,10 +26,8 @@ namespace Abp.Builders
             }
             else
             {
+                token = token.RemoveFields("typeName");
                 var obj = (JObject)token;
-                var firstOrDefault = obj.Properties().FirstOrDefault(x => x.Name == "typeName");
-                firstOrDefault?.Remove();
-
                 obj.WriteTo(writer);
             }
         }
