@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Web;
-using Abp.Application.Services;
 using Abp.Dependency;
 using Abp.Reflection;
-using Abp.Swagger.Application;
 using Abp.Web;
 
 namespace MvcApp

@@ -82,6 +82,7 @@
     <Compile Include="Builders\BatchSwaggerBuilder.cs" />
     <Compile Include="Builders\IBatchSwaggerBuilder.cs" />
     <Compile Include="Builders\JsonSchema4Converter.cs" />
+    <Compile Include="NSwagExtended\JTokenExtension.cs" />
     <Compile Include="NSwagExtended\SwaggerOperationExtended.cs" />
     <Compile Include="NSwagExtended\SwaggerOperationsExtended.cs" />
     <Compile Include="NSwagExtended\SwaggerOperationsExtendedConverter.cs" />

@@ -1,10 +1,4 @@
 {
-  "tags": [
-    {
-      "name": "Customer",
-      "description": "WebApi for Customer."
-    }
-  ],
   "securityDefinitions": {},
   "paths": {
     "/api/services/app/Customer/GetCustomer": {
@@ -27,7 +21,6 @@
         "operationId": "GetCustomer",
         "responses": {
           "200": {
-            "description": "OK",
             "schema": {
               "type": "object",
               "$ref": "#/definitions/GetCustomerForEditOutput"
@@ -54,7 +47,6 @@
         "operationId": "GetCustomerById",
         "responses": {
           "200": {
-            "description": "OK",
             "schema": {
               "type": "object",
               "$ref": "#/definitions/GetCustomerForEditOutput"
@@ -73,7 +65,6 @@
         "operationId": "GetCustomers",
         "responses": {
           "200": {
-            "description": "OK",
             "schema": {
               "items": {
                 "type": "object",
@@ -92,7 +83,6 @@
         "operationId": "GetCustomerList",
         "responses": {
           "200": {
-            "description": "OK",
             "schema": {
               "items": {
                 "type": "object",
@@ -124,7 +114,6 @@
         "operationId": "GetCustomerToList",
         "responses": {
           "200": {
-            "description": "OK",
             "schema": {
               "type": "object",
               "$ref": "#/definitions/PagedResultOutputCustomerListDto"
@@ -142,6 +131,7 @@
   "schemes": [],
   "definitions": {
     "NullableIdInput": {
+      "typeName": "NullableIdInput",
       "additionalProperties": false,
       "type": "object",
       "properties": {
@@ -151,6 +141,7 @@
       }
     },
     "GetCustomerForEditOutput": {
+      "typeName": "GetCustomerForEditOutput",
       "additionalProperties": false,
       "type": "object",
       "required": [
@@ -194,6 +185,7 @@
       }
     },
     "CustomerListDto": {
+      "typeName": "CustomerListDto",
       "additionalProperties": false,
       "type": "object",
       "required": [
@@ -227,6 +219,7 @@
       }
     },
     "GetCustomersInput": {
+      "typeName": "GetCustomersInput",
       "additionalProperties": false,
       "type": "object",
       "required": [
@@ -262,6 +255,7 @@
       }
     },
     "PagedResultOutputCustomerListDto": {
+      "typeName": "PagedResultOutputCustomerListDto",
       "additionalProperties": false,
       "type": "object",
       "required": [
@@ -273,6 +267,7 @@
         },
         "Items": {
           "items": {
+            "typeName": "CustomerListDto",
             "type": "object",
             "$ref": "#/definitions/CustomerListDto"
           },

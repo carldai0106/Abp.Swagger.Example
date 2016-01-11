@@ -73,7 +73,7 @@ namespace NJsonSchema
                     AdditionalPropertiesSchema = FromJsonWithoutReferenceHandling(value.ToString());
             }
         }
-
+        
         [JsonProperty("items", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
         internal object ItemsRaw
         {

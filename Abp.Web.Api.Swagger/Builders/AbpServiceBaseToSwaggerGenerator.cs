@@ -301,6 +301,7 @@ namespace Abp.Builders
             {
                 operation.Responses["200"] = new SwaggerResponse
                 {
+                    Description = "OK",
                     Schema = CreateAndAddSchema<JsonSchema4>(method.ReturnType, schemaResolver)
                 };
             }
