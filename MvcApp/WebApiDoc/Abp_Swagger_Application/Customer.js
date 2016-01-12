@@ -148,7 +148,8 @@
         "Id": {
           "type": "integer"
         }
-      }
+      },
+      "description": "A shortcut of  for ."
     },
     "GetCustomerForEditOutput": {
       "additionalProperties": false,
