@@ -31,7 +31,7 @@ namespace Abp.WebApi.Swagger.Builders
 
     public class SwaggerEnabledConfiguration
     {
-        private static readonly string DefaultRouteTemplate = "swagger/ui/{*assetPath}";
+        private static readonly string DefaultRouteTemplate = "abpswagger/ui/{*assetPath}";
         private readonly HttpConfiguration _httpConfig;
         private readonly Func<HttpRequestMessage, string> _rootUrlResolver;
         public SwaggerEnabledConfiguration(
@@ -44,9 +44,10 @@ namespace Abp.WebApi.Swagger.Builders
         }
        
 
-        public void EnableSwaggerUi(string routeTemplate = "swagger/ui/{*assetPath}")
+        public void EnableSwaggerUi(string routeTemplate = "abpswagger/ui/{*assetPath}")
         {
             var config = new SwaggerUiConfig(null, _rootUrlResolver);
+            config.DocExpansion(DocExpansion.List);
 
             _httpConfig.Routes.MapHttpRoute(
                 name: "swagger_ui",
@@ -60,10 +61,10 @@ namespace Abp.WebApi.Swagger.Builders
             {
                 _httpConfig.Routes.MapHttpRoute(
                     name: "swagger_ui_shortcut",
-                    routeTemplate: "swagger",
+                    routeTemplate: "abpswagger",
                     defaults: null,
                     constraints: new { uriResolution = new HttpRouteDirectionConstraint(HttpRouteDirection.UriResolution) },
-                    handler: new RedirectHandler(_rootUrlResolver, "swagger/ui/index"));
+                    handler: new RedirectHandler(_rootUrlResolver, "abpswagger/ui/index"));
             }
         }
     }

@@ -146,7 +146,7 @@
     <EmbeddedResource Include="WebApi\Swagger\Ui\CustomAssets\index.html" />
     <EmbeddedResource Include="WebApi\Swagger\Ui\CustomAssets\screen.css" />
     <EmbeddedResource Include="WebApi\Swagger\Ui\CustomAssets\swagger-oauth.js" />
-    <EmbeddedResource Include="WebApi\Swagger\Ui\CustomAssets\typography.css" />
+    <Content Include="WebApi\Swagger\Ui\CustomAssets\typography.css" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="swagger-ui\dist\**\*.*">

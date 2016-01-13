@@ -31,6 +31,7 @@ namespace Abp.WebApi.Swagger.Application
                 {"%(OAuth2Realm)", ""},
                 {"%(OAuth2AppName)", ""}
             };
+
             _rootUrlResolver = rootUrlResolver;
 
             MapPathsForSwaggerUiAssets();
@@ -38,8 +39,8 @@ namespace Abp.WebApi.Swagger.Application
             // Use some custom versions to support config and extensionless paths
             var thisAssembly = GetType().Assembly;
             CustomAsset("index", thisAssembly, "Abp.WebApi.Swagger.Ui.CustomAssets.index.html");
-            CustomAsset("css/screen-css", thisAssembly, "Abp.WebApi.Swagger.Ui.CustomAssets.screen.css");
-            CustomAsset("css/typography-css", thisAssembly, "Abp.WebApi.Swagger.Ui.CustomAssets.typography.css");
+            //CustomAsset("css/screen-css", thisAssembly, "Abp.WebApi.Swagger.Ui.CustomAssets.screen.css");
+            //CustomAsset("css/typography-css", thisAssembly, "Abp.WebApi.Swagger.Ui.CustomAssets.typography.css");
             CustomAsset("lib/swagger-oauth-js", thisAssembly, "Abp.WebApi.Swagger.Ui.CustomAssets.swagger-oauth.js");
         }
 
@@ -128,7 +129,7 @@ namespace Abp.WebApi.Swagger.Application
             var thisAssembly = GetType().Assembly;
             foreach (var resourceName in thisAssembly.GetManifestResourceNames())
             {
-                if (resourceName.Contains("Abp.SwaggerUi.CustomAssets")) continue; // original assets only
+                if (resourceName.Contains("Abp.WebApi.Swagger.Ui.CustomAssets")) continue; // original assets only
 
                 var path = resourceName
                     .Replace("\\", "/")
