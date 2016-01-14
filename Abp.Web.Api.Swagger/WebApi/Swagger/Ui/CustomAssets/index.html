@@ -75,8 +75,15 @@
             if (window.SwaggerTranslator) {
                 window.SwaggerTranslator.translate();
             }
+
+            var discoveryPath = swashbuckleConfig.discoveryPaths[0];
+            var urlPath = "/" + discoveryPath;
+            if (discoveryPath == undefined) {
+                urlPath = "";
+            }
+
             window.swaggerUi = new SwaggerUi({
-                url: swashbuckleConfig.rootUrl + "/" + swashbuckleConfig.discoveryPaths[0],
+                url: swashbuckleConfig.rootUrl + urlPath,
                 dom_id: "swagger-ui-container",
                 booleanValues: swashbuckleConfig.booleanValues,
                 onComplete: function(swaggerApi, swaggerUi) {
@@ -133,7 +140,9 @@
               $('#input_apiKey').val(apiKey);
             */
 
-            window.swaggerUi.load();
+            if (swashbuckleConfig.rootUrl !== window.swaggerUi.options.url) {
+                window.swaggerUi.load();
+            }
 
             function log() {
                 if ('console' in window) {
@@ -155,17 +164,7 @@
                     </div>
                 </div>
                 <div class="col-md-10">
-                    <!-- <form id='api_selector'>
-                        <div class='input'>
-                            <input placeholder="http://example.com/api" id="input_baseUrl" name="baseUrl" type="text" class="custom-input" />
-                        </div>
-                        <div class='input'>
-                            <input placeholder="api_key" id="input_apiKey" name="apiKey" type="text" class="custom-input" />
-                        </div>
-                        <div class='input'>
-                            <a id="explore" href="#" data-sw-translate>Explore</a>
-                        </div>
-                    </form> -->
+                    
                     <form id='api_selector' class="form-inline">
                         <div class="form-group">
                             <select class="selectpicker" data-style="btn-primary btn-lg">

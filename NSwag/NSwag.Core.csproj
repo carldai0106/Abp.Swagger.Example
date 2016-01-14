@@ -75,12 +75,6 @@
     <None Include="NSwag.Core.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NJsonSchema\NJsonSchema.csproj">
-      <Project>{7b7a2e32-e808-4a19-98b1-37e766580f8c}</Project>
-      <Name>NJsonSchema</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

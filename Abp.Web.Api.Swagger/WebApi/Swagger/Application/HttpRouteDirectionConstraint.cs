@@ -4,6 +4,9 @@ using System.Web.Http.Routing;
 
 namespace Abp.WebApi.Swagger.Application
 {
+    /// <summary>
+    /// Implement IHttpRouteConstraint; Represents a base class route constraint
+    /// </summary>
     public class HttpRouteDirectionConstraint : IHttpRouteConstraint
     {
         private readonly HttpRouteDirection _allowedDirection;

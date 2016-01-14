@@ -124,8 +124,6 @@
     <Compile Include="WebApi\Swagger\Adapter\AbpSwaggerTag.cs" />
     <Compile Include="WebApi\Swagger\Application\HttpRouteDirectionConstraint.cs" />
     <Compile Include="WebApi\Swagger\Application\RedirectHandler.cs" />
-    <Compile Include="WebApi\Swagger\Application\SwaggerDocsConfig.cs" />
-    <Compile Include="WebApi\Swagger\Application\SwaggerDocsHandler.cs" />
     <Compile Include="WebApi\Swagger\Application\SwaggerUiConfig.cs" />
     <Compile Include="WebApi\Swagger\Application\SwaggerUiHandler.cs" />
     <Compile Include="WebApi\Swagger\Builders\AbpSwaggerBuilder.cs" />
@@ -142,11 +140,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="WebApi\Swagger\Ui\CustomAssets\discoveryUrlSelector.js" />
     <EmbeddedResource Include="WebApi\Swagger\Ui\CustomAssets\index.html" />
-    <EmbeddedResource Include="WebApi\Swagger\Ui\CustomAssets\screen.css" />
     <EmbeddedResource Include="WebApi\Swagger\Ui\CustomAssets\swagger-oauth.js" />
-    <Content Include="WebApi\Swagger\Ui\CustomAssets\typography.css" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="swagger-ui\dist\**\*.*">

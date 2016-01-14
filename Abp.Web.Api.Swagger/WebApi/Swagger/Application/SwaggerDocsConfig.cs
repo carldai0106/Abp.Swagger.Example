@@ -25,6 +25,11 @@ namespace Abp.WebApi.Swagger.Application
             return _rootUrlResolver(swaggerRequest);
         }
 
+        /// <summary>
+        /// According client request to get root url
+        /// </summary>
+        /// <param name="request">request from client</param>
+        /// <returns></returns>
         public static string DefaultRootUrlResolver(HttpRequestMessage request)
         {
             var scheme = GetHeaderValue(request, "X-Forwarded-Proto") ?? request.RequestUri.Scheme;

@@ -26,6 +26,7 @@ namespace Abp.WebApi.Swagger.Application
 
             var tsc = new TaskCompletionSource<HttpResponseMessage>();
             tsc.SetResult(response);
+
             return tsc.Task;
         }
     }
